@@ -15,17 +15,32 @@ public class Application1 {
         int[] arr = new int[6];
 
         label:
-        for(int i=0; i<arr.length; i++){
-            int num = (int) (Math.random() * 45) + 1;
+//        for(int i=0; i<arr.length; i++){
+//            int num = (int) (Math.random() * 45) + 1;
+//            arr[i] = num;
+//            for(int j=0; j<arr.length; j++){
+//                if(arr[j] == num){
+//                    continue label;
+//                }
+//            }
+//        }
+        for(int i = 0; i < arr.length; i++) {
+            int num = (int)(Math.random() * 45) + 1;
             arr[i] = num;
-            for(int j=0; j<arr.length; j++){
-                if(arr[j] == num){
-                    continue label;
-                }
-            }
-        }
-        Arrays.sort(arr);
+            boolean check = true;
 
+            do{
+                int campareNum = (int)(Math.random() * 45) + 1;
+                for(int j =0; j<i; j++){
+                    if(arr[j] == campareNum){
+                        break;
+                    }
+                }
+            } while(!check);
+        }
+
+
+        Arrays.sort(arr);
         System.out.println(Arrays.toString(arr));
 
     }
