@@ -18,6 +18,7 @@ public class Application1 {
         for(int i=0; i<arr.length; i++){
             int num = (int) (Math.random() * 45) + 1;
             arr[i] = num;
+//            label:
             for(int j=0; j<arr.length; j++){
                 if(arr[j] == num){
                     continue label;
