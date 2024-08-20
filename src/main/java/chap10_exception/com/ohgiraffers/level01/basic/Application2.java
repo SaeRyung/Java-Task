@@ -26,8 +26,8 @@ public class Application2 {
         int year = today.getYear();
 
         int age = Integer.parseInt(HBD.substring(0, 4));
-        int mm = Integer.parseInt(HBD.substring(4, 6));
-        int dd = Integer.parseInt(HBD.substring(6, 8));
+        int mm = Integer.parseInt(HBD.substring(5, 7));
+        int dd = Integer.parseInt(HBD.substring(8));
 
         if(year - age < 20){
             System.out.println("만 20세 이상은 입장 불가입니다.");
