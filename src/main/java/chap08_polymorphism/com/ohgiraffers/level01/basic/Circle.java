@@ -1,19 +1,24 @@
-//package chap08_polymorphism.com.ohgiraffers.level01.basic;
-//
-//public class Circle extends Shape {
-//    private
-//
-//    public Circle() {
-//    }
-//
-//    // 원의 넓이
-//    @Override
-//    double calculateArea(int n) {
-//        return (double) (n * n * Math.PI);
-//    }
-//    // 원의 둘레
-//    @Override
-//    double calculatePerimeter(int n) {
-//        return (double) (n * 2 * Math.PI);
-//    }
-//}
+package chap08_polymorphism.com.ohgiraffers.level01.basic;
+
+public class Circle extends Shape implements Resizable{
+    private double radius;
+
+    public Circle(int radius) {
+        this.radius = radius;
+    }
+
+    @Override
+    double calculateArea() {
+        return radius * radius * Math.PI;
+    }
+
+    @Override
+    double calculatePerimeter() {
+        return radius * Math.PI * 2;
+    }
+
+    @Override
+    public void resize(double factor) {
+        radius *= factor;
+    }
+}

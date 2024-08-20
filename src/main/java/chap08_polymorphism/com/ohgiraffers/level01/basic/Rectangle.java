@@ -1,17 +1,27 @@
-//package chap08_polymorphism.com.ohgiraffers.level01.basic;
-//
-//public class Rectangle extends Shape {
-//    public Rectangle() {}
-//
-//    @Override
-//    // 사각형 넓이
-//    double calculateArea(int a, int b) {
-//        return a * b;
-//    }
-//
-//    // 사각형 둘레
-//    @Override
-//    double calculatePerimeter(int a, int b) {
-//        return (a + b)*2;
-//    }
-//}
+package chap08_polymorphism.com.ohgiraffers.level01.basic;
+
+public class Rectangle extends Shape implements Resizable{
+    private double width;
+    private double height;
+
+    public Rectangle(int width, int height) {
+        this.width = width;
+        this.height = height;
+    }
+
+    @Override
+    double calculateArea() {
+        return width * height;
+    }
+
+    @Override
+    double calculatePerimeter() {
+        return (width + height) * 2;
+    }
+
+    @Override
+    public void resize(double factor) {
+        width *= factor;
+        height *= factor;
+    }
+}
