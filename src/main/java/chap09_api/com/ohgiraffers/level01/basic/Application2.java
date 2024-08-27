@@ -21,35 +21,36 @@ public class Application2 {
 
         Scanner inputStr = new Scanner(System.in);
         System.out.print("문자열 입력 : ");
-        String str = inputStr.nextLine();
 
-        StringBuilder BuildStr = new StringBuilder(str);
+        StringBuilder BuildStr = new StringBuilder(inputStr.nextLine());
+
         int strLen = BuildStr.length();
-        int idx = str.indexOf("!");
+        int idx = BuildStr.indexOf("!");
 
         String.valueOf(BuildStr.delete(idx,strLen));
 
-        String[] arr = BuildStr.toString().split(" ");
+        String[] arr = BuildStr.toString().toLowerCase().split(" ");
         int arrLen = arr.length;
-        int resultCount = 0;
 
-        
-        StringBuilder result = new StringBuilder();
+        String[] same = new String[arrLen];
 
-        for(int i=0; i<arrLen; i++){
+
+        for(int i=0; i<arrLen; i++) {
             int count = 0;
-            String word = arr[i].toLowerCase();
+            int len = same.length;
+            for(int j=0; j<same.length; j++){
 
-            for(int j=0; j<arrLen; j++){
-                if(word.equals(arr[j].toLowerCase())){
-                    count+=1;
+                if(same[j].indexOf(arr[i]) > 0){
+                    count++;
                 }
 
+                if(same[j].indexOf(arr[i]) < 0){
+                    same[j] = arr[i];
+                }
             }
-            System.out.println(arr[i] + ": " + count);
         }
-        System.out.println(resultCount);
 
 
+        System.out.println(Arrays.toString(arr));
     }
 }
